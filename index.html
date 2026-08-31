@@ -6,16 +6,6 @@
     <title>𝐌𝐄𝐇𝐓𝐀~𝐀𝐑𝐌𝐘 𝟐.𝟎 💸</title>
 
     <style>
-        :root {
-            --bg-color: #05070B;
-            --card-bg: rgba(13, 16, 27, 0.85);
-            --card-border: rgba(255, 255, 255, 0.07);
-            --text-purple: #C084FC;
-            --text-cyan: #38BDF8;
-            --btn-start: #7C3AED;
-            --btn-end: #3B82F6;
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -24,48 +14,169 @@
         }
 
         body {
-            background-color: var(--bg-color);
+            background-color: #0d0e12;
             background-image: 
-                radial-gradient(circle at 50% 15%, rgba(124, 58, 237, 0.12) 0%, transparent 60%),
-                radial-gradient(circle at 50% 85%, rgba(59, 130, 246, 0.08) 0%, transparent 60%);
+                radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.08) 0%, transparent 60%),
+                radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.3), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.2), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.4), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 160px 120px, rgba(255, 255, 255, 0.3), rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 200px 200px, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px 15px;
             color: #ffffff;
+            padding: 25px 15px;
         }
 
-        .wrapper {
+        .container {
             width: 100%;
-            max-width: 400px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        /* Outer Glass Container */
-        .hero-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: 28px;
-            padding: 40px 24px 30px;
-            text-align: center;
+            max-width: 410px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+            text-align: center;
         }
 
-        /* Arise Tag */
-        .tagline-top {
+        /* Live Badge */
+        .live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 16px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
             font-size: 11px;
             font-weight: 700;
-            letter-spacing: 4px;
-            color: #818CF8;
-            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #d1d5db;
             margin-bottom: 25px;
+        }
+
+        .live-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #a1a1aa;
+            border-radius: 50%;
+        }
+
+        /* Profile Avatar */
+        .avatar-box {
+            position: relative;
+            width: 135px;
+            height: 135px;
+            border-radius: 50%;
+            margin-bottom: 22px;
+            box-shadow: 0 0 35px rgba(255, 255, 255, 0.12);
+        }
+
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Channel Titles */
+        .main-title {
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            color: #ffffff;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .sub-title {
+            font-size: 14px;
+            color: #9ca3af;
+            font-weight: 400;
+            margin-bottom: 25px;
+        }
+
+        /* Divider Line */
+        .divider {
+            width: 50px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.2);
+            margin-bottom: 25px;
+            border-radius: 2px;
+        }
+
+        /* Dark Join Button */
+        .join-btn {
+            width: 100%;
+            padding: 18px;
+            background: #1e222b;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 18px;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+            display: block;
+            transition: transform 0.2s ease, background 0.2s ease;
+            animation: pulseBtn 2s infinite;
+        }
+
+        @keyframes pulseBtn {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); background: #252a36; }
+            100% { transform: scale(1); }
+        }
+
+        .join-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Expiry Box */
+        .timer-card {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 20px 15px;
+            margin-bottom: 35px;
+        }
+
+        .timer-label {
+            font-size: 13px;
+            color: #9ca3af;
+            margin-bottom: 6px;
+        }
+
+        .timer-val {
+            font-size: 34px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .timer-subtext {
+            font-size: 12px;
+            color: #6b7280;
+            line-height: 1.4;
+            max-width: 250px;
+            margin: 0 auto;
+        }
+
+        /* Bottom Stats */
+        .stats-grid {
+            width: 100%;
             display: flex;
-            align-items:
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction

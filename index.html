@@ -14,7 +14,7 @@
         }
 
         body {
-            background-color: #0d0e12;
+            background-color: #0c0d11;
             background-image: 
                 radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.08) 0%, transparent 60%),
                 radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.3), rgba(0,0,0,0)),
@@ -179,4 +179,106 @@
 
         .stat-item {
             display: flex;
-            flex-direction
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stat-num {
+            font-size: 18px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .stat-lbl {
+            font-size: 10px;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-divider {
+            width: 1px;
+            height: 25px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Footer */
+        .footer {
+            font-size: 11px;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+
+        .footer a {
+            color: #6b7280;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="live-badge">
+            <span class="live-dot"></span> LIVE NOW
+        </div>
+
+        <div class="avatar-box">
+            <img src="https://i.ibb.co/bwqWyhB/IMG-20260828-014912-988.jpg" class="avatar-img" alt="Profile Avatar">
+        </div>
+
+        <h1 class="main-title">𝐌𝐄𝐇𝐓𝐀~𝐀𝐑𝐌𝐘 𝟐.𝟎 💸</h1>
+        <p class="sub-title">Your Premium Gaming Destination 🎰</p>
+
+        <div class="divider"></div>
+
+        <a href="https://telegram.me/+JllBiaOdHN05N2U9" class="join-btn">
+            JOIN NOW
+        </a>
+
+        <div class="timer-card">
+            <div class="timer-label">Time Left For Free Join</div>
+            <div class="timer-val" id="timer">00:16</div>
+            <div class="timer-subtext">Offer starts counting down as soon as you open the page.</div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-num">50K+</span>
+                <span class="stat-lbl">MEMBERS</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-num">24/7</span>
+                <span class="stat-lbl">SUPPORT</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-num">100%</span>
+                <span class="stat-lbl">SECURE</span>
+            </div>
+        </div>
+
+        <div class="footer">
+            © 2026 All rights reserved.<br>
+            Ads Managed By <a href="https://t.me/senorita_xoxo" target="_blank">@senorita_xoxo</a>
+        </div>
+    </div>
+
+    <script>
+        let timeLeft = 16;
+        const timerElement = document.getElementById('timer');
+
+        const countdown = setInterval(() => {
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                timerElement.textContent = "00:00";
+            } else {
+                timeLeft--;
+                let seconds = timeLeft < 10 ? '0' + timeLeft : timeLeft;
+                timerElement.textContent = `00:${seconds}`;
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

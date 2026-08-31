@@ -40,8 +40,8 @@
         body {
             background-color: var(--bg-dark);
             background-image: 
-                radial-gradient(circle at 50% 25%, rgba(112, 0, 255, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 50% 75%, rgba(0, 240, 255, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 50% 30%, rgba(112, 0, 255, 0.18) 0%, transparent 60%),
+                radial-gradient(circle at 50% 70%, rgba(0, 240, 255, 0.12) 0%, transparent 60%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -55,10 +55,10 @@
             max-width: 410px;
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 20px;
         }
 
-        /* Outer Glass Card */
+        /* Main Card */
         .glass-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
@@ -86,7 +86,7 @@
             gap: 8px;
         }
 
-        /* Dual Glowing Ring Avatar */
+        /* Avatar Box with Glowing Border */
         .avatar-box {
             position: relative;
             width: 140px;
@@ -135,7 +135,7 @@
             font-weight: 600;
         }
 
-        /* Purple-Blue Gradient Join Button */
+        /* CTA Button */
         .join-btn {
             width: 100%;
             padding: 18px 20px;
@@ -166,65 +166,11 @@
             margin-top: 14px;
         }
 
-        /* Expiry Box */
-        .timer-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            backdrop-filter: blur(16px);
-            border-radius: 20px;
-            padding: 14px;
-            text-align: center;
-        }
-
-        .timer-title {
-            font-size: 11px;
-            font-weight: 700;
-            color: #EF4444;
-            letter-spacing: 1px;
-            margin-bottom: 2px;
-            text-transform: uppercase;
-        }
-
-        .timer-display {
-            font-size: 32px;
-            font-weight: 900;
-            color: #FBBF24;
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-        }
-
-        .stat-box {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            padding: 12px 5px;
-            border-radius: 14px;
-            text-align: center;
-        }
-
-        .stat-num {
-            font-size: 15px;
-            font-weight: 800;
-            color: #F8FAFC;
-        }
-
-        .stat-lbl {
-            font-size: 9px;
-            color: #64748B;
-            text-transform: uppercase;
-            margin-top: 3px;
-        }
-
         /* Footer */
         .footer {
             text-align: center;
             font-size: 11px;
             color: #475569;
-            margin-top: 4px;
         }
 
         .footer a {
@@ -255,45 +201,10 @@
             <p class="sub-caption">Tap to open Telegram and join instantly</p>
         </div>
 
-        <div class="timer-card">
-            <div class="timer-title">⚠️ LINK EXPIRES IN</div>
-            <div class="timer-display" id="timer">00:10</div>
-        </div>
-
-        <div class="stats-grid">
-            <div class="stat-box">
-                <div class="stat-num">99.9%</div>
-                <div class="stat-lbl">Accuracy</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-num">24/7</div>
-                <div class="stat-lbl">Support</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-num">100%</div>
-                <div class="stat-lbl">Secure</div>
-            </div>
-        </div>
-
         <div class="footer">
             Ads Managed By <a href="https://t.me/senorita_xoxo" target="_blank">@senorita_xoxo</a>
         </div>
     </div>
 
-    <script>
-        let timeLeft = 10;
-        const timerElement = document.getElementById('timer');
-
-        const countdown = setInterval(() => {
-            if (timeLeft <= 0) {
-                clearInterval(countdown);
-                timerElement.textContent = "00:00";
-            } else {
-                timeLeft--;
-                let seconds = timeLeft < 10 ? '0' + timeLeft : timeLeft;
-                timerElement.textContent = `00:${seconds}`;
-            }
-        }, 1000);
-    </script>
 </body>
 </html>

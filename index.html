@@ -5,7 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>𝐌𝐄𝐇𝐓𝐀~𝐀𝐑𝐌𝐘 𝟐.𝟎 💸</title>
 
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1408633040633596');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1408633040633596&ev=PageView&noscript=1"
+    /></noscript>
     <style>
+        :root {
+            --bg-dark: #070913;
+            --card-bg: rgba(15, 18, 33, 0.75);
+            --card-border: rgba(120, 119, 198, 0.25);
+            --cyan-glow: #00F0FF;
+            --purple-glow: #7000FF;
+            --text-blue: #38BDF8;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -14,63 +38,70 @@
         }
 
         body {
-            background-color: #0c0d11;
+            background-color: var(--bg-dark);
             background-image: 
-                radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.08) 0%, transparent 60%),
-                radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.3), rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.2), rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.4), rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 160px 120px, rgba(255, 255, 255, 0.3), rgba(0,0,0,0));
-            background-repeat: repeat;
-            background-size: 200px 200px, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+                radial-gradient(circle at 50% 25%, rgba(112, 0, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 75%, rgba(0, 240, 255, 0.1) 0%, transparent 50%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             color: #ffffff;
-            padding: 25px 15px;
+            padding: 20px 15px;
         }
 
-        .container {
+        .wrapper {
             width: 100%;
             max-width: 410px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
+            gap: 16px;
         }
 
-        /* Live Badge */
-        .live-badge {
-            display: inline-flex;
+        /* Outer Glass Card */
+        .glass-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 32px;
+            padding: 40px 24px 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 6px;
-            padding: 6px 16px;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(255, 255, 255, 0.02);
+        }
+
+        /* Top Tagline */
+        .top-tag {
             font-size: 11px;
             font-weight: 700;
-            letter-spacing: 1.5px;
-            color: #d1d5db;
+            letter-spacing: 5px;
+            color: #6366F1;
+            text-transform: uppercase;
             margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .live-dot {
-            width: 6px;
-            height: 6px;
-            background-color: #a1a1aa;
-            border-radius: 50%;
-        }
-
-        /* Profile Avatar */
+        /* Dual Glowing Ring Avatar */
         .avatar-box {
             position: relative;
-            width: 135px;
-            height: 135px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            margin-bottom: 22px;
-            box-shadow: 0 0 35px rgba(255, 255, 255, 0.12);
+            padding: 5px;
+            background: linear-gradient(180deg, var(--cyan-glow) 0%, var(--purple-glow) 100%);
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.4), 0 0 50px rgba(112, 0, 255, 0.3);
+            margin-bottom: 25px;
+            animation: pulseGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 25px rgba(0, 240, 255, 0.3), 0 0 45px rgba(112, 0, 255, 0.2); }
+            100% { box-shadow: 0 0 40px rgba(0, 240, 255, 0.6), 0 0 65px rgba(112, 0, 255, 0.5); }
         }
 
         .avatar-img {
@@ -78,195 +109,179 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            border: 4px solid #090B16;
         }
 
-        /* Channel Titles */
+        /* Channel Main Title */
         .main-title {
             font-size: 26px;
             font-weight: 900;
             letter-spacing: 1px;
-            color: #ffffff;
-            margin-bottom: 8px;
+            color: #FFFFFF;
+            margin-bottom: 12px;
             text-transform: uppercase;
         }
 
-        .sub-title {
+        /* Sub Headline */
+        .sub-headline {
             font-size: 14px;
-            color: #9ca3af;
-            font-weight: 400;
-            margin-bottom: 25px;
+            color: #94A3B8;
+            margin-bottom: 28px;
+            font-weight: 500;
         }
 
-        /* Divider Line */
-        .divider {
-            width: 50px;
-            height: 2px;
-            background: rgba(255, 255, 255, 0.2);
-            margin-bottom: 25px;
-            border-radius: 2px;
+        .sub-headline span {
+            color: var(--text-blue);
+            font-weight: 600;
         }
 
-        /* Dark Join Button */
+        /* Purple-Blue Gradient Join Button */
         .join-btn {
             width: 100%;
-            padding: 18px;
-            background: #1e222b;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 18px;
+            padding: 18px 20px;
+            background: linear-gradient(90deg, #7C3AED 0%, #2563EB 100%);
+            border-radius: 16px;
             color: #ffffff;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 800;
             letter-spacing: 1.5px;
             text-decoration: none;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-            margin-bottom: 20px;
-            display: block;
-            transition: transform 0.2s ease, background 0.2s ease;
-            animation: pulseBtn 2s infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.4);
+            animation: ctaPulse 2s infinite;
+            transition: all 0.3s ease;
         }
 
-        @keyframes pulseBtn {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.02); background: #252a36; }
-            100% { transform: scale(1); }
+        @keyframes ctaPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); box-shadow: 0 12px 35px rgba(37, 99, 235, 0.6); }
         }
 
-        .join-btn:active {
-            transform: scale(0.98);
+        .sub-caption {
+            font-size: 12px;
+            color: #64748B;
+            margin-top: 14px;
         }
 
         /* Expiry Box */
         .timer-card {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(16px);
             border-radius: 20px;
-            padding: 20px 15px;
-            margin-bottom: 35px;
+            padding: 14px;
+            text-align: center;
         }
 
-        .timer-label {
-            font-size: 13px;
-            color: #9ca3af;
-            margin-bottom: 6px;
-        }
-
-        .timer-val {
-            font-size: 34px;
-            font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 10px;
+        .timer-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: #EF4444;
             letter-spacing: 1px;
+            margin-bottom: 2px;
+            text-transform: uppercase;
         }
 
-        .timer-subtext {
-            font-size: 12px;
-            color: #6b7280;
-            line-height: 1.4;
-            max-width: 250px;
-            margin: 0 auto;
+        .timer-display {
+            font-size: 32px;
+            font-weight: 900;
+            color: #FBBF24;
         }
 
-        /* Bottom Stats */
+        /* Stats Grid */
         .stats-grid {
-            width: 100%;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            margin-bottom: 30px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
         }
 
-        .stat-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .stat-box {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 12px 5px;
+            border-radius: 14px;
+            text-align: center;
         }
 
         .stat-num {
-            font-size: 18px;
+            font-size: 15px;
             font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 4px;
+            color: #F8FAFC;
         }
 
         .stat-lbl {
-            font-size: 10px;
-            color: #6b7280;
+            font-size: 9px;
+            color: #64748B;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .stat-divider {
-            width: 1px;
-            height: 25px;
-            background: rgba(255, 255, 255, 0.1);
+            margin-top: 3px;
         }
 
         /* Footer */
         .footer {
+            text-align: center;
             font-size: 11px;
-            color: #4b5563;
-            line-height: 1.6;
+            color: #475569;
+            margin-top: 4px;
         }
 
         .footer a {
-            color: #6b7280;
+            color: var(--text-blue);
             text-decoration: none;
+            font-weight: 600;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="live-badge">
-            <span class="live-dot"></span> LIVE NOW
+    <div class="wrapper">
+        <div class="glass-card">
+            <div class="top-tag">♦ ARISE ♦</div>
+
+            <div class="avatar-box">
+                <img src="https://i.ibb.co/bwqWyhB/IMG-20260828-014912-988.jpg" class="avatar-img" alt="Profile">
+            </div>
+
+            <h1 class="main-title">𝐌𝐄𝐇𝐓𝐀~𝐀𝐑𝐌𝐘 𝟐.𝟎 💸</h1>
+            <p class="sub-headline">Enter the guild. <span>Premium signals</span> await.</p>
+
+            <a href="https://telegram.me/+JllBiaOdHN05N2U9" class="join-btn" onclick="fbq('track', 'Subscribe');">
+                <span>JOIN TELEGRAM</span>
+                <span style="font-size: 18px;">➤</span>
+            </a>
+
+            <p class="sub-caption">Tap to open Telegram and join instantly</p>
         </div>
-
-        <div class="avatar-box">
-            <img src="https://i.ibb.co/bwqWyhB/IMG-20260828-014912-988.jpg" class="avatar-img" alt="Profile Avatar">
-        </div>
-
-        <h1 class="main-title">𝐌𝐄𝐇𝐓𝐀~𝐀𝐑𝐌𝐘 𝟐.𝟎 💸</h1>
-        <p class="sub-title">Your Premium Gaming Destination 🎰</p>
-
-        <div class="divider"></div>
-
-        <a href="https://telegram.me/+JllBiaOdHN05N2U9" class="join-btn">
-            JOIN NOW
-        </a>
 
         <div class="timer-card">
-            <div class="timer-label">Time Left For Free Join</div>
-            <div class="timer-val" id="timer">00:16</div>
-            <div class="timer-subtext">Offer starts counting down as soon as you open the page.</div>
+            <div class="timer-title">⚠️ LINK EXPIRES IN</div>
+            <div class="timer-display" id="timer">00:10</div>
         </div>
 
         <div class="stats-grid">
-            <div class="stat-item">
-                <span class="stat-num">50K+</span>
-                <span class="stat-lbl">MEMBERS</span>
+            <div class="stat-box">
+                <div class="stat-num">99.9%</div>
+                <div class="stat-lbl">Accuracy</div>
             </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-                <span class="stat-num">24/7</span>
-                <span class="stat-lbl">SUPPORT</span>
+            <div class="stat-box">
+                <div class="stat-num">24/7</div>
+                <div class="stat-lbl">Support</div>
             </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-                <span class="stat-num">100%</span>
-                <span class="stat-lbl">SECURE</span>
+            <div class="stat-box">
+                <div class="stat-num">100%</div>
+                <div class="stat-lbl">Secure</div>
             </div>
         </div>
 
         <div class="footer">
-            © 2026 All rights reserved.<br>
             Ads Managed By <a href="https://t.me/senorita_xoxo" target="_blank">@senorita_xoxo</a>
         </div>
     </div>
 
     <script>
-        let timeLeft = 16;
+        let timeLeft = 10;
         const timerElement = document.getElementById('timer');
 
         const countdown = setInterval(() => {
